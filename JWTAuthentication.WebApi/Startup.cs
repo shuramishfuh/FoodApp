@@ -120,7 +120,6 @@ namespace JWTAuthentication.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
