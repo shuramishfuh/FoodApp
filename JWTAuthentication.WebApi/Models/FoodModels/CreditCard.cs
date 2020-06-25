@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public int Number { get; set; }
-        public byte SecurityCode { get; set; }
+        public int SecurityCode { get; set; }
 
-        public virtual PaymentDetails PaymentDetails { get; set; }
+        public  PaymentDetails PaymentDetails { get; set; }
     }
 }

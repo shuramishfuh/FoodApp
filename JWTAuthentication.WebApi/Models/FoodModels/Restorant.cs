@@ -14,10 +14,10 @@ namespace JWTAuthentication.WebApi.Models.FoodModels
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public byte OperatingTimeId { get; set; }
+        public int OperatingTimeId { get; set; }
         public Geometry Location { get; set; }
         public double Rating { get; set; }
-        public byte ContactId { get; set; }
+        public int ContactId { get; set; }
         public int PaymentDetailsId { get; set; }
 
         public  Contact Contact { get; set; }

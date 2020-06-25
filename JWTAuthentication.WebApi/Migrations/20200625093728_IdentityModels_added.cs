@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace JWTAuthentication.WebApi.Migrations
 {
-    public partial class fix : Migration
+    public partial class IdentityModels_added : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -164,8 +164,7 @@ namespace JWTAuthentication.WebApi.Migrations
                     Token = table.Column<string>(nullable: true),
                     Expires = table.Column<DateTime>(nullable: false),
                     Created = table.Column<DateTime>(nullable: false),
-                    Revoked = table.Column<DateTime>(nullable: true),
-                    ReplacedByToken = table.Column<string>(nullable: true)
+                    Revoked = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {

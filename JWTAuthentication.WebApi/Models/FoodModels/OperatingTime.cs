@@ -9,7 +9,7 @@ namespace JWTAuthentication.WebApi.Models.FoodModels
             Day = new HashSet<Day>();
         }
 
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         public  Restorant Restorant { get; set; }
         public  ICollection<Day> Day { get; set; }

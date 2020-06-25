@@ -74,7 +74,9 @@ namespace JWTAuthentication.WebApi
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                   // b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName),
+                    x=>x.UseNetTopologySuite())
+            );
 
 
             

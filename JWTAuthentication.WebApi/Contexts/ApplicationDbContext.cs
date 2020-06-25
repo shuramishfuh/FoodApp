@@ -28,6 +28,7 @@ namespace JWTAuthentication.WebApi.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new ContactConfiguration());
             modelBuilder.ApplyConfiguration(new CreditCardConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());

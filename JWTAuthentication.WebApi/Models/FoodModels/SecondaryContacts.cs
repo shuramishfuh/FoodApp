@@ -2,7 +2,7 @@
 {
     public  class SecondaryContacts
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
         public int? WhatsAppNumber { get; set; }
         public int? OtherNumber { get; set; }
 

@@ -6,8 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200526183755_fix.cs" />
+    <Compile Remove="Migrations\20200526183755_fix.Designer.cs" />
+    <Compile Remove="Migrations\20200526190908_fix expiraiton.cs" />
+    <Compile Remove="Migrations\20200526190908_fix expiraiton.Designer.cs" />
+    <Compile Remove="Migrations\20200526195706_fix expiraiton final.cs" />
+    <Compile Remove="Migrations\20200526195706_fix expiraiton final.Designer.cs" />
     <Compile Remove="Migrations\20200613101639_added_email_data_anotation_to_models.cs" />
     <Compile Remove="Migrations\20200613101639_added_email_data_anotation_to_models.Designer.cs" />
+    <Compile Remove="Migrations\20200624154214_added_food_models.cs" />
+    <Compile Remove="Migrations\20200624154214_added_food_models.Designer.cs" />
+    <Compile Remove="Migrations\20200625092855_added_food_models.cs" />
+    <Compile Remove="Migrations\20200625092855_added_food_models.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
