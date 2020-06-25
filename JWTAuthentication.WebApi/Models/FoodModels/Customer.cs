@@ -4,7 +4,7 @@ using NetTopologySuite.Geometries;
 
 namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public   class Customer
+    public   class Customer : ICustomer
     {
         public Customer()
         {

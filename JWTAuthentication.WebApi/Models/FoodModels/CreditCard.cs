@@ -1,6 +1,6 @@
 ﻿namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class CreditCard
+    public  class CreditCard : ICreditCard
     {
         public int Id { get; set; }
         public int Number { get; set; }

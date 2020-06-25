@@ -1,6 +1,8 @@
-﻿namespace JWTAuthentication.WebApi.Models.FoodModels
+﻿using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
+
+namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class PaymentDetails
+    public  class PaymentDetails : IPaymentDetails
     {
         public int Id { get; set; }
         public int CreditCard { get; set; }

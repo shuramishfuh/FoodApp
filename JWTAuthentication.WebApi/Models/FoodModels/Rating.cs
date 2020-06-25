@@ -1,6 +1,8 @@
-﻿namespace JWTAuthentication.WebApi.Models.FoodModels
+﻿using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
+
+namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class Rating
+    public  class Rating : IRating
     {
         public int Id { get; set; }
         public double Score { get; set; }

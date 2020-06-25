@@ -1,6 +1,8 @@
-﻿namespace JWTAuthentication.WebApi.Models.FoodModels
+﻿using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
+
+namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class SecondaryContacts
+    public  class SecondaryContacts : ISecondaryContacts
     {
         public int Id { get; set; }
         public int? WhatsAppNumber { get; set; }

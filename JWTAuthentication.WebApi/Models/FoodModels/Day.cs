@@ -2,7 +2,7 @@
 
 namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class Day
+    public  class Day : IDay
     {
         public int Id { get; set; }
         public string WeekDay { get; set; }

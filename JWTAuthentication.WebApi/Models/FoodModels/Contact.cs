@@ -1,6 +1,6 @@
 ﻿namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public class Contact
+    public class Contact : IContact
     {
         public int Id { get; set; }
         public int PrimaryPhone { get; set; }

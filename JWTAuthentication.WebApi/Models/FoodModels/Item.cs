@@ -1,6 +1,6 @@
 ﻿namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class Item
+    public  class Item : IItem
     {
         public int Id { get; set; }
         public string Name { get; set; }

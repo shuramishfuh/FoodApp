@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
 
 namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class Order
+    public  class Order : IOrder
     {
         public Order()
         {

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
 using NetTopologySuite.Geometries;
 
 namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class Restorant
+    public  class Restorant : IRestorant
     {
         public Restorant()
         {

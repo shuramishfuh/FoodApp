@@ -1,8 +1,9 @@
 ﻿using System;
+using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
 
 namespace JWTAuthentication.WebApi.Models.FoodModels
 {
-    public  class RestorantUser
+    public  class RestorantUser : IRestorantUser
     {
         public int Id { get; set; }
         public string Name { get; set; }
