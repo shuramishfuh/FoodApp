@@ -1,5 +1,5 @@
-﻿using JWTAuthentication.WebApi.Configuration;
-using JWTAuthentication.WebApi.Models;
+﻿using JWTAuthentication.WebApi.Contexts.Configuration;
+using JWTAuthentication.WebApi.Models.Auth;
 using JWTAuthentication.WebApi.Models.FoodModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +41,7 @@ namespace JWTAuthentication.WebApi.Contexts
             modelBuilder.ApplyConfiguration(new RestorantConfiguration());
             modelBuilder.ApplyConfiguration(new SecondaryContactsConfiguration());
             modelBuilder.ApplyConfiguration(new RestorantConfiguration());
+
 
         }
     }

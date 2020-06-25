@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
 using NetTopologySuite.Geometries;
 
 namespace JWTAuthentication.WebApi.Models.FoodModels

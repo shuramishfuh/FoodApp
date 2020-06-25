@@ -1,4 +1,6 @@
-﻿namespace JWTAuthentication.WebApi.Models.FoodModels
+﻿using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
+
+namespace JWTAuthentication.WebApi.Models.FoodModels
 {
     public  class Item : IItem
     {

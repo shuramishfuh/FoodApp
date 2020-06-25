@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
+using JWTAuthentication.WebApi.Models.Auth;
 
 namespace JWTAuthentication.WebApi
 {

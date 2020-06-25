@@ -1,8 +1,9 @@
-﻿using JWTAuthentication.WebApi.Constants;
-using JWTAuthentication.WebApi.Models;
+﻿using JWTAuthentication.WebApi.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;
+using JWTAuthentication.WebApi.Models.Auth;
+using JWTAuthentication.WebApi.Models.Constants;
 
 namespace JWTAuthentication.WebApi.Contexts
 {

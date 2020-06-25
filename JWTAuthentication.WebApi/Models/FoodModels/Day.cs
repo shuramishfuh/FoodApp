@@ -1,4 +1,5 @@
 ﻿using System;
+using JWTAuthentication.WebApi.Models.FoodModelsInterfaces;
 
 namespace JWTAuthentication.WebApi.Models.FoodModels
 {

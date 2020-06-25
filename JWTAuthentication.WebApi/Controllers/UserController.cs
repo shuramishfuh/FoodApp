@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using JWTAuthentication.WebApi.Filter;
 using JWTAuthentication.WebApi.Models;
+using JWTAuthentication.WebApi.Models.Auth;
 using JWTAuthentication.WebApi.Services;
+using JWTAuthentication.WebApi.Services.Auth;
+using JWTAuthentication.WebApi.Services.Filter;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
