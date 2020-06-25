@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace JWTAuthentication.WebApi.Repositories.UnitOfWork
 {
-    interface IUnitOfWork: IDisposable
+    public interface IUnitOfWork: IAsyncDisposable
     {
         Task<int> Complete();
     }

@@ -10,6 +10,7 @@ namespace JWTAuthentication.WebApi.Repositories.UnitOfWork
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
+            // instantiate all repos and pass _context
         }
         
 
@@ -17,9 +18,10 @@ namespace JWTAuthentication.WebApi.Repositories.UnitOfWork
         {
           return _context.SaveChangesAsync();
         }
-        public void Dispose()
+
+        public async ValueTask DisposeAsync()
         {
-            _context.DisposeAsync();
+            await _context.DisposeAsync();
         }
     }
 }
