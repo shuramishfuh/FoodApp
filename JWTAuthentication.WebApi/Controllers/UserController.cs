@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using JWTAuthentication.WebApi.Models;
 using JWTAuthentication.WebApi.Models.Auth;
-using JWTAuthentication.WebApi.Services;
 using JWTAuthentication.WebApi.Services.Auth;
 using JWTAuthentication.WebApi.Services.Filter;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JWTAuthentication.WebApi.Controllers
 {
-    [ApikeyAuth]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -28,6 +26,7 @@ namespace JWTAuthentication.WebApi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        [ApikeyAuth]
         [HttpPost("Register")]
         public async Task<ActionResult> RegisterAsync([FromBody]RegisterModel model)
         {
@@ -82,6 +81,7 @@ namespace JWTAuthentication.WebApi.Controllers
         /// </summary>
         /// <param name="model"> email password</param>
         /// <returns></returns>
+        [ApikeyAuth]
         [HttpPost("Token")]
         public async Task<ActionResult> GetTokenAsync([FromBody]TokenRequestModel model)
         {
@@ -135,6 +135,7 @@ namespace JWTAuthentication.WebApi.Controllers
         /// refresh existing token 
         /// </summary>
         /// <returns></returns>
+        [ApikeyAuth]
         [HttpPost("RefreshToken")]
         public async Task<ActionResult> RefreshToken()
         {
@@ -144,12 +145,13 @@ namespace JWTAuthentication.WebApi.Controllers
                 SetRefreshTokenInCookie(response.RefreshToken);
             return Ok(response);
         }
-        
+
         /// <summary>
         ///  revoke token and render it inactive
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+         [ApikeyAuth]
         [HttpPost("RevokeToken")]
         /* method indicates a warning because of
          lack of await in the body 
@@ -183,8 +185,8 @@ namespace JWTAuthentication.WebApi.Controllers
             };
             Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
         }
-
-        [Authorize, HttpPost("Tokens/{id}")]
+        [Authorize]
+        [HttpPost("Tokens/{id}")]
         public ActionResult GetRefreshTokens(string id)
         {
             var user = _userService.GetById(id);
@@ -227,15 +229,9 @@ namespace JWTAuthentication.WebApi.Controllers
         {
             if (!ModelState.IsValid) return BadRequest("Check your Inputs");
             var result = await _userService.ResetPasswordAsync(model);
-
             if (result.StartsWith("Success"))
                 return Ok(result);
-
             return BadRequest("error occured Please try again later");
-
-        }  
-        
-      
-
+        }
     }
 }

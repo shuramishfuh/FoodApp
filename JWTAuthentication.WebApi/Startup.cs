@@ -70,7 +70,6 @@ namespace JWTAuthentication.WebApi
                 });
             });
 
-
             //Adding DB Context with MSSQL
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

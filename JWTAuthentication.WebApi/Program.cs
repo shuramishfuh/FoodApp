@@ -1,5 +1,4 @@
 using JWTAuthentication.WebApi.Contexts;
-using JWTAuthentication.WebApi.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;

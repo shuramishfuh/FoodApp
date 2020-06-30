@@ -90,20 +90,12 @@ namespace JWTAuthentication.WebApi.Services.Auth
         public async Task<string> DeleteUserAsync(RegisterModel model)
         {
             var userWithSameEmail = await _userManager.FindByEmailAsync(model.Email);
-            if (userWithSameEmail != null)
-            {
-                var result = await _userManager.DeleteAsync(userWithSameEmail);
-                if (result.Succeeded)
-                {
-                   // await _userManager.AddToRoleAsync(user, Authorization.DefaultRole.ToString());
-                    await _context.SaveChangesAsync();
-                    return $"Success user was deleted";
-
-                }
-                return $"Error occured could not delete user with email{model.Email} ";
-
-            }
-            return $" No User with Email {model.Email } was found.";
+            if (userWithSameEmail == null) return $" No User with Email {model.Email} was found.";
+            var result = await _userManager.DeleteAsync(userWithSameEmail);
+            if (!result.Succeeded) return $"Error occured could not delete user with email{model.Email} ";
+            // await _userManager.AddToRoleAsync(user, Authorization.DefaultRole.ToString());
+            await _context.SaveChangesAsync();
+            return $"Success user was deleted";
         }
 
         public async Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model)
@@ -384,11 +376,7 @@ namespace JWTAuthentication.WebApi.Services.Auth
 
             var result = await _userManager.ConfirmEmailAsync(user, normalToken);
 
-            if (result.Succeeded)
-            {return $"Success Email confirmed";}
-
-            return $"Error Could not confirm email";
-          
+            return result.Succeeded ? $"Success Email confirmed" : $"Error Could not confirm email";
         }
 
 
