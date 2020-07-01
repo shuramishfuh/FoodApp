@@ -1,6 +1,4 @@
 using JWTAuthentication.WebApi.Contexts;
-using JWTAuthentication.WebApi.Models;
-using JWTAuthentication.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,8 +10,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
+using Autofac;
 using JWTAuthentication.WebApi.Models.Auth;
 using JWTAuthentication.WebApi.Services.Auth;
+using JWTAuthentication.WebApi.Services.DI;
 using Microsoft.OpenApi.Models;
 
 namespace JWTAuthentication.WebApi
@@ -46,6 +46,11 @@ namespace JWTAuthentication.WebApi
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.AddScoped<IUserService, UserService>();
+
+            // Registering Auto-fac
+            var builder = new ContainerBuilder();
+            builder.RegisterModule<DIModules>();
+            builder.Build();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
