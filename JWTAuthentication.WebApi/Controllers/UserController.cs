@@ -185,7 +185,7 @@ namespace JWTAuthentication.WebApi.Controllers
             };
             Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
         }
-        [Authorize]
+        [ApikeyAuth]
         [HttpPost("Tokens/{id}")]
         public ActionResult GetRefreshTokens(string id)
         {
@@ -209,6 +209,8 @@ namespace JWTAuthentication.WebApi.Controllers
         }
 
         // api/user/forget password
+        // send email
+        [ApikeyAuth]
         [HttpPost("ForgetPassword")]
         public async Task<IActionResult> ForgetPassword(string email)
         {
