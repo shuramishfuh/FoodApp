@@ -49,7 +49,7 @@ namespace JWTAuthentication.WebApi
 
             // Registering Auto-fac
             var builder = new ContainerBuilder();
-            builder.RegisterModule<DIModules>();
+            builder.RegisterModule<DiModules>();
             builder.Build();
 
             // Register the Swagger generator, defining 1 or more Swagger documents

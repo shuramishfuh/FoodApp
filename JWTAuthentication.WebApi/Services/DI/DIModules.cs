@@ -4,7 +4,7 @@ using JWTAuthentication.WebApi.Models.FoodModels;
 
 namespace JWTAuthentication.WebApi.Services.DI
 {
-    public class DIModules : Module
+    public class DiModules : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
